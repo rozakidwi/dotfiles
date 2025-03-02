@@ -1,0 +1,9 @@
+font=Iosevka 12
+background-color=#282828
+border-color=#d3869b
+text-color=#ebdbb2
+
+padding=10
+margin=10
+default-timeout=10000
+
