@@ -10,4 +10,4 @@
 
 
 
-good artist copy, great artist steal
+good artists copy, great artists steal
