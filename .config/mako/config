@@ -1,0 +1,10 @@
+font=IosevkaTerm Nerd Font Propo 11
+margin=5
+outer-margin=20
+text-alignment=right
+icon-location=right
+background-color=#eff1f5
+text-color=#4c4f69
+border-color=#9ca0b0
+default-timeout=10000
+#height
