@@ -1,0 +1,28 @@
+[general]
+import = [ "~/.config/alacritty/catppuccin.toml" ]
+
+[window]
+padding = { x = 20, y = 20 }
+
+[env]
+WINIT_WAYLAND_SCALE_FACTOR = "1"
+
+[font]
+normal = {
+	family = "M+1Code Nerd Font Mono",
+	style = "Regular"
+}
+bold = {
+	family = "M+1Code Nerd Font Mono",
+	style = "Bold"
+}
+italic = {
+	family = "M+1Code Nerd Font Mono",
+	style = "Italic"
+}
+bold_italic = {
+	family = "M+1Code Nerd Font Mono",
+	style = "BoldItalic"
+}
+
+size = 11
