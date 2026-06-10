@@ -5,6 +5,13 @@ brightness () {
 	BRIGHTNESS_NUMBER="$(( 100 * NUMBER_CUR / NUMBER_MAX ))"
 	printf "BRI %s%%" "$BRIGHTNESS_NUMBER"
 }
+internet () {
+	if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
+		echo "NET ON"
+	else
+		echo "NET OFF"
+	fi
+}
 volume () {
 	VOLUME_NUMBER="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ product = $2 * 100; print product }')"
 	printf "VOL %s%%" "$VOLUME_NUMBER"
@@ -28,5 +35,5 @@ clock () {
 	echo "UTC+7 $(date +'%R')"
 }
 
-echo "$(brightness)  $(volume)  $(battery)  $(calendar)  $(clock)"
+echo "$(brightness)  $(internet)  $(volume)  $(battery)  $(calendar)  $(clock)"
 
