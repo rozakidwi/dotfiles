@@ -20,7 +20,7 @@ battery () {
 	BATTERY_NUMBER="$(cat /sys/class/power_supply/BAT0/capacity)"
 	CHARGING_STATE="$(cat /sys/class/power_supply/BAT0/status)"
 
-	if [ "$CHARGING_STATE" == "Charging" ]; then
+	if [ "$CHARGING_STATE" = "Charging" ]; then
 		CHARGING_SIGN=" (+)"
 	else
 		CHARGING_SIGN=""
