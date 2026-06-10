@@ -10,12 +10,6 @@ set $menu fuzzel
 output * bg ~/.config/sway/bg.jpg fill
 font pango: IosevkaTerm Nerd Font Mono 11
 
-exec swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
-	timeout 600 'swaymsg "output * power off"' \
-	timeout 900 'systemctl suspend' \
-		resume 'swaymsg "output * power on"' \
-	before-sleep 'swaylock -f -c 000000'
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mako
 
