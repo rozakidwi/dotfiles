@@ -1,0 +1,7 @@
+[user]
+    name = Muhammad Rijal Dwi Rozaki
+    email = rozakidwi@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
