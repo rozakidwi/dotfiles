@@ -1,0 +1,7 @@
+[user]
+	name = Muhammad Rijal Dwi Rozaki
+	email = dwirozaki@proton.me
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
