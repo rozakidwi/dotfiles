@@ -1,1 +1,1 @@
-alias ed="nvim ~/documents/dotfiles"
+alias ed="nvim ~/?ocuments/dotfiles"
