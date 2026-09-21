@@ -42,7 +42,7 @@ bar {
 		background #eff1f5
 		statusline #4c4f69
 		focused_workspace #4c4f69 #4c4f69 #eff1f5
-		inactive_workspace #ccd0da #ccd0da #4c4f69
+		inactive_workspace #eff1f5 #eff1f5 #4c4f69
 	}
 }
 # -----------------------------------------------------------------------------
