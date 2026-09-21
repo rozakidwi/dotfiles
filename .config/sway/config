@@ -24,17 +24,9 @@ input "mouse" {
 	accel_profile flat
 }
 
-# color
-set $foreground #4c4f69
-set $background #eff1f5
-set $bar_background #dce0e8
-set $gray #9ca0b0
-set $accent #1e66f5
-
-client.focused $gray $foreground $background $foreground $foreground
-client.focused_inactive $gray $background $foreground $foreground $foreground
-client.unfocused $gray $background $foreground
-
+client.focused #4c4f69 #4c4f69 #eff1f5 #4c4f69 #4c4f69
+client.focused_inactive #ccd0da #ccd0da #4c4f69 #ccd0da #ccd0da
+client.unfocused #ccd0da #ccd0da #4c4f69 #ccd0da #ccd0da
 
 # bar.
 bar {
