@@ -1,0 +1,179 @@
+# before configuring, make sure you do aware that `man 5 sway`
+# exists...
+
+# systemd integeration 
+include /etc/sway/config.d/*
+
+# set wallpaper
+output * bg ~/?ictures/1780988472770.jpg fill
+
+# font
+font SpaceMono Nerd Font Propo 10
+
+# input device configurations (mouse, touchpad, etc.).
+# check `man 5 sway-input` for more info.
+input "touchpad" {
+	tap enabled
+	natural_scroll enabled
+	drag enabled
+	dwt enabled
+	pointer_accel 0.4
+}
+input "mouse" {
+	pointer_accel 1
+	accel_profile flat
+}
+
+# color
+set $foreground #4c4f69
+set $background #eff1f5
+set $bar_background #dce0e8
+set $gray #9ca0b0
+set $accent #1e66f5
+
+client.focused $gray $foreground $background $foreground $foreground
+client.focused_inactive $gray $background $foreground $foreground $foreground
+client.unfocused $gray $background $foreground
+
+
+# bar.
+bar {
+	position bottom
+	status_command while \
+		bash ~/.config/sway/status.sh; \
+	do sleep 1; done
+
+	colors {
+		statusline $foreground
+		background $bar_background
+		focused_workspace $gray $foreground $background
+		inactive_workspace $gray $background $foreground
+	}
+}
+# -----------------------------------------------------------------------------
+
+# put Mod4 syntax into $mod variable
+set $mod Mod4
+
+# declare direction keys (vim)
+set $left h
+set $down j
+set $up k
+set $right l
+
+# declare terminal emulator
+set $term foot
+
+# declare application launcher
+set $menu wmenu-run -i \
+	-f "SpaceMono Nerd Font Propo 10" \
+	-N "eff1f5" \
+	-n "4c4f69" \
+	-m "9ca0b0" \
+	-S "1e66f5" \
+	-s "eff1f5"
+
+# -----------------------------------------------------------------------------
+
+# this section is about keybindings.
+# launch terminal
+bindsym $mod+Return exec $term
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# launch app launcher
+bindsym $mod+d exec $menu
+
+# - move floating windows by holding $mod + left mouse button
+# - resize floating windows by holding $mod + right mouse button
+floating_modifier $mod normal
+
+# reload sway
+bindsym $mod+Shift+c reload
+
+# kill sway session
+bindsym $mod+Shift+e exec swaynag \
+	--type warning \
+	--message 'you pressed the exit shortcut' \
+	--button-no-terminal 'exit sway now!' 'swaymsg exit'
+
+# switch the focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# move the focused window position
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# switch workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# move the focused window to other targeted workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# toggle: make new windows spawned horizontally (default)
+bindsym $mod+b splith
+
+# toggle: make new windows spawned vertically
+bindsym $mod+v splitv
+
+# change the current workspace to stacking layout
+bindsym $mod+s layout stacking
+
+# change the current workspace to tabbed layout
+bindsym $mod+w layout tabbed
+
+# change the current workspace to toggle split layout (default)
+bindsym $mod+e layout toggle split
+
+# make the focused window full screen
+bindsym $mod+f fullscreen
+
+# swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# send the focused window to scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# peek through the scratchpad container
+bindsym $mod+minus scratchpad show
+
+# enable resize mode
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # untoggle resize mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 1%-
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 1%+
+bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
