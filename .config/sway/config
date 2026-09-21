@@ -28,6 +28,9 @@ client.focused #4c4f69 #4c4f69 #eff1f5 #4c4f69 #4c4f69
 client.focused_inactive #ccd0da #ccd0da #4c4f69 #ccd0da #ccd0da
 client.unfocused #ccd0da #ccd0da #4c4f69 #ccd0da #ccd0da
 
+gaps inner 10px
+gaps outer 10px
+
 # bar.
 bar {
 	position bottom
