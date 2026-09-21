@@ -31,6 +31,8 @@ client.unfocused #ccd0da #ccd0da #4c4f69 #ccd0da #ccd0da
 gaps inner 10px
 gaps outer 10px
 
+title_align center
+
 # bar.
 bar {
 	position bottom
