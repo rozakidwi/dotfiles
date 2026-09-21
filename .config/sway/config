@@ -36,10 +36,10 @@ bar {
 	do sleep 1; done
 
 	colors {
-		statusline $foreground
-		background $bar_background
-		focused_workspace $gray $foreground $background
-		inactive_workspace $gray $background $foreground
+		background #eff1f5
+		statusline #4c4f69
+		focused_workspace #4c4f69 #4c4f69 #eff1f5
+		inactive_workspace #ccd0da #ccd0da #4c4f69
 	}
 }
 # -----------------------------------------------------------------------------
