@@ -12,14 +12,14 @@ font SpaceMono Nerd Font Propo 10
 
 # input device configurations (mouse, touchpad, etc.).
 # check `man 5 sway-input` for more info.
-input "touchpad" {
+input type:touchpad {
 	tap enabled
 	natural_scroll enabled
 	drag enabled
 	dwt enabled
 	pointer_accel 0.4
 }
-input "mouse" {
+input mouse {
 	pointer_accel 1
 	accel_profile flat
 }
