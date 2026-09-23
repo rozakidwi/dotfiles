@@ -25,8 +25,9 @@ input mouse {
 }
 
 client.focused #4c4f69 #4c4f69 #eff1f5 #4c4f69 #4c4f69
-client.focused_inactive #ccd0da #ccd0da #4c4f69 #ccd0da #ccd0da
-client.unfocused #ccd0da #ccd0da #4c4f69 #ccd0da #ccd0da
+client.focused_inactive #bcc0cc #e6e9ef #4c4f69 #bcc0cc #bcc0cc
+client.unfocused #bcc0cc #e6e9ef #4c4f69 #bcc0cc #bcc0cc
+titlebar_border_thickness 2
 
 gaps inner 10px
 gaps outer 10px
