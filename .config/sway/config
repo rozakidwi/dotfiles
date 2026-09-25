@@ -29,6 +29,8 @@ client.focused_inactive #bcc0cc #e6e9ef #4c4f69 #bcc0cc #bcc0cc
 client.unfocused #bcc0cc #e6e9ef #4c4f69 #bcc0cc #bcc0cc
 titlebar_border_thickness 2
 
+hide_edge_borders smart
+
 gaps inner 10px
 gaps outer 10px
 
